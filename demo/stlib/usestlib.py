@@ -1,3 +1,9 @@
+import sys
+
+sys.path.insert(0, r'c:\classroom\july12\demo\mylib')
+
+print(sys.path)
+
 import str_funs as sf
 from str_funs import isvalidmobile
 

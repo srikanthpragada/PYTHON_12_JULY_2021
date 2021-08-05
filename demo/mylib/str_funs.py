@@ -15,3 +15,7 @@ def hasdigit(st: str) -> bool:
 
 def isvalidmobile(st):
     return len(st) == 10 and st.isdigit()
+
+
+if __name__ == '__main__':    # Run as script
+    print("Module str_funs")
