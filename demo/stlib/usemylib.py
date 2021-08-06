@@ -1,5 +1,5 @@
+from mylib import *    # Import all modules of mylib package
 
-from mylib import str_funs as sf
-
-print(sf.hasdigit("20334"))
+print(str_funs.hasdigit("20334"))
+# print(num_funs.iseven("20334"))
 
