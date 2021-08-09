@@ -1,4 +1,14 @@
 class Student:
+    # Class attribute or static attribute
+    fees = {'python': 6000, 'java': 8000, 'c#': 5000}
+    taxrate = 12
+
+    @staticmethod
+    def getfee(course):
+        base_fee =  Student.fees[course]
+        tax = base_fee * Student.taxrate / 100
+        return base_fee + tax
+
     # Constructor
     def __init__(self, name, course, feepaid=0):
         # Object Attributes
@@ -15,8 +25,11 @@ class Student:
         print(f"Course  : {self.course}")
         print(f"Feepaid : {self.feepaid}")
 
+    def totalfee(self):
+        return Student.getfee(self.course)
+
     def getdue(self):
-        pass
+        return self.totalfee() - self.feepaid
 
 
 if __name__ == '__main__':
@@ -28,3 +41,8 @@ if __name__ == '__main__':
     s1.show()
 
     s2 = Student("Anders", "c#", 3000)
+    print(s2.getdue())
+
+    print(Student.getfee('c#'))
+
+
