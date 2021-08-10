@@ -31,6 +31,9 @@ class Student:
     def getdue(self):
         return self.totalfee() - self.feepaid
 
+    @property
+    def dueamount(self):
+        return self.totalfee() - self.feepaid
 
 if __name__ == '__main__':
     s1 = Student("Van", "python")  # Create object
@@ -42,6 +45,7 @@ if __name__ == '__main__':
 
     s2 = Student("Anders", "c#", 3000)
     print(s2.getdue())
+    print(s2.dueamount)  # Property
 
     print(Student.getfee('c#'))
 
