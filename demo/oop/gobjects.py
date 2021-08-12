@@ -1,7 +1,8 @@
 import math
+from abc import abstractmethod, ABC
 
 
-class Point:
+class Point(ABC):
     def __init__(self, x, y):
         self.x = x
         self.y = y
@@ -9,6 +10,10 @@ class Point:
     def show(self):
         print(self.x)
         print(self.y)
+
+    @abstractmethod
+    def area(self):
+        pass
 
 
 class Circle(Point):
@@ -19,7 +24,7 @@ class Circle(Point):
     def area(self):
         return math.pi * self.radius ** 2
 
-    def show(self):
+    def show(self):  # overriding
         super().show()
         print(self.radius)
 
@@ -41,5 +46,3 @@ class Rect(Point):
 
 r = Rect(10, 10, 20, 30)
 r.show()
-
-
