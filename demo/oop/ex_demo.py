@@ -11,5 +11,7 @@ except ZeroDivisionError:
     print("Sorry! Zero is not valid!")
 except Exception as ex:
     print('Stopped program due to some error -> ', ex)
+finally:
+    print("Finally block!")
 
 print("The End")
