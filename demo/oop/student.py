@@ -1,3 +1,11 @@
+class InvalidCourseError(Exception):
+    def __init__(self, course):
+        self.course = course
+
+    def __str__(self):
+        return f"Invalid Course --> {self.course}"
+
+
 class Student:
     # Class attribute or static attribute
     fees = {'python': 6000, 'java': 8000, 'c#': 5000}
@@ -5,7 +13,7 @@ class Student:
 
     @staticmethod
     def getfee(course):
-        base_fee =  Student.fees[course]
+        base_fee = Student.fees[course]
         tax = base_fee * Student.taxrate / 100
         return base_fee + tax
 
@@ -13,6 +21,9 @@ class Student:
     def __init__(self, name, course, feepaid=0):
         # Object Attributes
         self.name = name
+        if course not in Student.fees:
+            raise InvalidCourseError(course)
+
         self.course = course
         self.feepaid = feepaid
 
@@ -35,8 +46,9 @@ class Student:
     def dueamount(self):
         return self.totalfee() - self.feepaid
 
+
 if __name__ == '__main__':
-    s1 = Student("Van", "python")  # Create object
+    s1 = Student("Van", "aws")  # Create object
     s1.payment(3000)
     s1.payment(1000)
     # print(s1.feepaid)
@@ -48,5 +60,3 @@ if __name__ == '__main__':
     print(s2.dueamount)  # Property
 
     print(Student.getfee('c#'))
-
-
