@@ -1,0 +1,2 @@
+This is to test
+How to replace two or more spaces with one.
