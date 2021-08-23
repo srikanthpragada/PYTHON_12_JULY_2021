@@ -1,0 +1,5 @@
+<courses>
+    <course name="AWS Fundamentals" fee="3500" />
+    <course name="Python" fee="4000" />
+    <course name="Java EE" fee="4500" />
+</courses>

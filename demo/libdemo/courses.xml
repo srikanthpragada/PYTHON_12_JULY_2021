@@ -1,0 +1,14 @@
+<courses>
+    <course>
+        <name>AWS Fundamentals</name>
+        <fee>3500</fee>
+    </course>
+    <course>
+        <name>Data Science</name>
+        <fee>5000</fee>
+    </course>
+    <course>
+        <name>Python</name>
+        <fee>4000</fee>
+    </course>
+</courses>
