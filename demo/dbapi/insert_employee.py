@@ -13,6 +13,7 @@ try:
     con.commit()  # make insertion permanent
 except Exception as ex:
     print("Error : ", ex)
+    # con.rollback()
 
 cur.close()
 con.close()

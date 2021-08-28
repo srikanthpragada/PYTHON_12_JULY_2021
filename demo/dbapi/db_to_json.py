@@ -21,7 +21,7 @@ for emp in cur.fetchall():
 cur.close()
 con.close()
 
-print(json.dumps(employees))
+#print(json.dumps(employees))
 
 # Write to file
 f = open("employees.json", "wt")
